@@ -1,0 +1,17 @@
+--- !ruby/object:Wizard
+name: rhes
+level: 16
+file_name: rhes
+str_score: 12
+dex_score: 14
+con_score: 15
+int_score: 8
+wis_score: 10
+cha_score: 14
+class_formulas:
+  :base_atk_type: :full
+  :hit_die: :d10
+  :skill_points: 2
+  :fortitude_save: :weak
+  :reflex_save: :strong
+  :will_save: :weak
