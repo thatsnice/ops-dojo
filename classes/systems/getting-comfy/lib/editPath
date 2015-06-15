@@ -1,0 +1,21 @@
+#!/usr/bin/env perl
+# vim: syntax=perl
+
+use strict;
+use warnings;
+
+my @path = split(/:/, $ENV{PATH});
+
+while (<>) {
+  chomp;
+  my ($dir, $prepend) = split;
+  @path = grep { $_ ne $dir } @path;
+
+  if ($prepend) {
+    unshift @path, $dir;
+  } else {
+    push @path, $dir;
+  }
+}
+
+print join(":", @path);

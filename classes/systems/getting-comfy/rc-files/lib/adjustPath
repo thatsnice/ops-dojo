@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+export PATH=$(
+  for p in {,/usr,/usr/local}/{,s}bin '~/bin'; do
+    echo "$p prepend" 
+  done | ~/.lib/editPath
+)

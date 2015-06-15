@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+agent=~/.ssh/agent.info
+
+function startAgent() {
+  ssh-agent | grep -v echo > $agent
+  source $agent
+}
+
+function idPresent() {
+  ssh-add -l > /dev/null 2>&1
+}
+
+[ -e $agent ] || startAgent
+
+source $agent
+
+idPresent
+ret=$?
+
+# agent could not be contacted. Start a new one.
+[ $ret -gt 1 ] && startAgent
+
+# agent could not be contacted. Start a new one.
+# agent present but no identity loaded.
+[ $ret -gt 0 ] && ssh-add > /dev/null 2>&1
