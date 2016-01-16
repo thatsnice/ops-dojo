@@ -1,3 +1,4 @@
+
   - motivations
     - the customer
       - needs
@@ -12,7 +13,8 @@
     - project management
       - scope, time, budget
       - constant steering and adjustment
-    - change control
+    - risk management
+      - change control
     - compromise
 
   - what we do
@@ -49,6 +51,7 @@
 
   - technologies
     - patterns
+      - appliances (netapp, F5, etc)
     - examples
 
   - community involvement
