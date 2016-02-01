@@ -1,0 +1,36 @@
+%YAML 1.2
+---
+# vim: tw=78
+schema:
+  TermProps:
+    definition:
+      type: "string"
+    PoS:
+      type: "enumerated"
+      values: 
+        - other
+        - noun
+        - verb
+        - adjective
+        - adverb
+      description:
+        Part of Speech
+        "other" is a fallback and shouldn't be needed.
+definitions:
+  Abbreviations:
+    SLA:
+      - ServiceLevelAgreement
+  Terms:
+    Service:
+      - PoS: noun
+        definition:
+          An agreement between a Vendor and a Customer. The Vendor delivers a
+          Product to the Customer on demand, within the constraints of the
+          relevant ServiceLevelAgreements. The Customer compensates the Vendor
+          in some way, and that compensation constitutes a reciprical Service.
+        seeAlso:
+          - ServiceLevel
+          - ServiceLevelAgreement
+          - Product
+          - Vendor
+          - Customer
