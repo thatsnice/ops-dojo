@@ -7,7 +7,8 @@ schema:
       type: "string"
     PoS:
       type: "enumerated"
-      values: 
+      default: "noun"
+      values:
         - other
         - noun
         - verb
@@ -21,16 +22,36 @@ definitions:
     SLA:
       - ServiceLevelAgreement
   Terms:
+    Vendor:
+      A Vendor owns Programs and Services. An employee vends productivity to
+      an employer. A persistence API vends storage service to a client.
+    Customer:
+      A Customer is the source of Demand for a Service.
+    Product:
+      A unit of service. Examples include API request responses, shipped
+      packages or a completed Customer Service Call.
+    Request:
+      A Customer uses a Client to generate a Request for a Product from a
+      Service.
+    Response:
+      A Server provides a Response to a Client Request as part of a
+      Transaction.
+    Demand:
+      The pattern (volume) of Requests. Usually a function of time, among
+      other things.
     Service:
-      - PoS: noun
-        definition:
-          An agreement between a Vendor and a Customer. The Vendor delivers a
-          Product to the Customer on demand, within the constraints of the
-          relevant ServiceLevelAgreements. The Customer compensates the Vendor
-          in some way, and that compensation constitutes a reciprical Service.
-        seeAlso:
-          - ServiceLevel
-          - ServiceLevelAgreement
-          - Product
-          - Vendor
-          - Customer
+      A Vendor offers a Service to Customers. Vendors and Customers might
+      agree on an SLA which defines the expectations of the participants, how
+      Customers reciprocate and how violation of defined thresholds are
+      handled. The mechanisms of delivery of Products is defined by the
+      Transactions a Service supports.
+    Server:
+      An instance of a Service.
+    Client:
+      An entity
+    ServiceLevel:
+      The constraints within an SLA. Constraints include the definition of 
+      Requests and Responses constituting Transactions, the Products delivered
+      through such Transactions, the measurement of the Performance of the
+      Service and the thresholds marking the successful delivery of the
+      Products within the ServiceLevel being defined.
