@@ -44,6 +44,13 @@ How the objects in the Lexicon interact.
 - The development of Ops Dojo itself will be guided by its own wisdom to the
   degree that doing so is possible. It will constitute another example.
 
+# Project layout
+
+- the-library
+  - The Product of this Program.
+- meta
+  - Management docs for this Program: definitions, scope, etc
+
 # Editor settings
 
 vim: filetype=markdown textwidth=78 expandtab tabstop=2 softtabstop=2
