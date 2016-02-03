@@ -19,5 +19,11 @@
       across the environment. What an instance requires and where in the
       system those requirements are not met.
 
-- Nicole is wary of over-simplification and unified solutions which do not
-  account for all relevant context
+- Nicole input
+  - wary of over-simplification and unified solutions which do not account for
+    all relevant context
+
+  - "Things have their own structure for a reason and that's important to
+    recognized. If something works" and then I started paraphrasing as: at a
+    scale, it's not safe to assume it can be replicated at another scale.
+
