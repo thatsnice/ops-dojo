@@ -8,7 +8,13 @@ modules, it is insufficiently decoupled from them.
 
 ## Explanations: The Two Things About X
 
+The two things about the Ops Dojo are
+
+  - Structure and Flexibility?
+
 ## Designs: Do One Thing Well
+
+The One Thing the Ops Dojo does is ...
 
 ## Seek Maximal Decoupling
 
