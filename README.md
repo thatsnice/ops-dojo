@@ -3,6 +3,14 @@
 It's a meta project for developing a shared lexicon, best practices and example
 projects for running 
 
+# Project layout
+
+- Product/the-library
+  - The Product of this Program.
+- Program
+  - Management docs for this Program: definitions, scope, etc
+  - Also serves as the first example application of the library to a project
+
 # The Plan
 
 ## Three Prong Attack
@@ -43,13 +51,6 @@ How the objects in the Lexicon interact.
 
 - The development of Ops Dojo itself will be guided by its own wisdom to the
   degree that doing so is possible. It will constitute another example.
-
-# Project layout
-
-- the-library
-  - The Product of this Program.
-- meta
-  - Management docs for this Program: definitions, scope, etc
 
 # Editor settings
 
