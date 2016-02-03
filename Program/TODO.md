@@ -2,6 +2,7 @@
   - Formalize management of this list
   - Review available source materials
   - Better project name. Ops Dojo doesn't capture the new vision very well.
+  - Guide to contributing?
 
 - Later
   - Scripting and templates
