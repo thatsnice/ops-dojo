@@ -16,7 +16,7 @@ projects for running
 
 # The Plan
 
-## Three Prong Attack
+## Four Prong Attack
 
 ### Lexicon
 
@@ -44,6 +44,12 @@ How the objects in the Lexicon interact.
 
 - A Vendor provides Services to Customers
   - The Vendor executes a Program to identify its Customers
+
+### TIC Tool Suite
+
+https://github.com/rdeforest/TIC
+
+As of 2012-02-02, this is jut a stub.
 
 ### Example Project(s)
 
