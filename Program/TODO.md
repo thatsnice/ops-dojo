@@ -3,6 +3,13 @@
   - Review available source materials
   - Better project name. Ops Dojo doesn't capture the new vision very well.
   - Guide to contributing?
+  - Look for examples of successful Programs?
+    - Linux Kernel, Debian, GNU, etc?
+    - Brooklyn Bridge?
+  - Decide how to approach historical incidents
+    - Should we examine Three Mile Island, Chernobyl and Fukashima?
+    - Should we examine NASA's incidents?
+    - Should we examine incidents we have personal experience with?
 
 - Later
   - Scripting and templates
