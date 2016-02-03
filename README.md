@@ -5,11 +5,14 @@ projects for running
 
 # Project layout
 
-- Product/the-library
-  - The Product of this Program.
-- Program
+- Product/
+  - Where the output of this initiative goes
+  - the-library/ - The collection of definitions, advice and tools we are developing.
+
+- Program/
   - Management docs for this Program: definitions, scope, etc
   - Also serves as the first example application of the library to a project
+  - archive/ - Some older stuff which needs to be incorporated and deleted
 
 # The Plan
 
