@@ -1,7 +1,7 @@
 # What is the Ops Dojo?
 
 It's a meta project for developing a shared lexicon, best practices and example
-projects for running 
+projects for running technical operations and development.
 
 # Project layout
 
@@ -13,6 +13,9 @@ projects for running
   - Management docs for this Program: definitions, scope, etc
   - Also serves as the first example application of the library to a project
   - archive/ - Some older stuff which needs to be incorporated and deleted
+
+- Examples/
+  - Instances of projects or programs using this library
 
 # The Plan
 
@@ -51,15 +54,15 @@ https://github.com/rdeforest/TIC
 
 As of 2012-02-02, this is jut a stub.
 
-### Example Project(s)
+### Example Projects
 
 - Most if not all terms in the Lexicon should apply to one or more entities in
-  the example.
+  the examples.
 
 ## Principles
 
 - The development of Ops Dojo itself will be guided by its own wisdom to the
-  degree that doing so is possible. It will constitute another example.
+  degree that doing so is possible. It will itself constitute another example.
 
 # Editor settings
 
