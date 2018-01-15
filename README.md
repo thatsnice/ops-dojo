@@ -1,21 +1,18 @@
 # What is the Ops Dojo?
 
-It's a meta project for developing a shared lexicon, best practices and example
-projects for running technical operations and development.
+## Mission Statement
 
-# Project layout
+The Ops Dojo serves humanity by gathering, absorbing, developing and
+disseminating wisdom, knowledge and tools which promote balanced, continuously
+improving processes.
 
-- Product/
-  - Where the output of this initiative goes
-  - the-library/ - The collection of definitions, advice and tools we are developing.
+## In other words
 
-- Program/
-  - Management docs for this Program: definitions, scope, etc
-  - Also serves as the first example application of the library to a project
-  - archive/ - Some older stuff which needs to be incorporated and deleted
-
-- Examples/
-  - Instances of projects or programs using this library
+This is primarily a meta project for developing a shared lexicon, best
+practices, tools and examples to improve technical operations. Most of what
+this project produces will likely be applicable to life in general, which is
+why the Mission Statement is as generic as it is. There's no reason to
+prematurely limit ourselves.
 
 # The Plan
 
@@ -63,6 +60,20 @@ As of 2012-02-02, this is jut a stub.
 
 - The development of Ops Dojo itself will be guided by its own wisdom to the
   degree that doing so is possible. It will itself constitute another example.
+
+# Project layout
+
+- Products/
+  - Where the output of this initiative goes
+  - the-library/ - The collection of definitions, advice and tools we are developing.
+
+  - Examples/
+    - Instances of projects or programs using this library
+
+- Program/
+  - Management docs for this Program: definitions, scope, etc
+  - Also serves as the first example application of the library to a project
+  - archive/ - Some older stuff which needs to be incorporated and deleted
 
 # Editor settings
 
