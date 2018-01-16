@@ -8,7 +8,7 @@
     - short
     - challenging/engaging but not frustrating
 
-# Todo
+# To-do
 
 ## Kellie
 
@@ -84,37 +84,70 @@
 - Services
 - Programs with UIs
 
-## Operations
+## Security
 
- - Puzzle pieces
-  - People/groups
-   - Customers
-   - Vendors
-   - Engineers
-  - Software/services
-  - Devices
-  - Network transports
-  - Physical and logical network topologies
-  - Access control (authn/authz)
+- Aspects
+ - Authenticity (it is the system you think it is)
+ - Availability (it is usable for its advertised purpose)
+ - Integrity    (it behaves correctly)
+ - Privacy      (it doesn't leak data)
 
- - System Life-cycle
-  - Commissioning
+- Physical security
+- Network security and it many layers
+- Application security
+- Human factors
+
+# Operations
+
+## Puzzle pieces
+
+- People/groups
+ - Customers
+ - Vendors
+ - Engineers
+- Software/services
+- Devices
+- Network transports
+- Physical and logical network topologies
+- Access control (authn/authz)
+
+## System Life-cycle
+
+- Commissioning
+ - Requirements
+ - Design
+ - Policies
+  - SLAs
+  - Change control
+  - ...
+ - Implementation
+  - Project Management/Logistics
+  - Automation
+  - Measurement, logging
+  - Alerting
+   - Automated responses
+   - Manual responses
+  - Deploying and connecting pieces
+   - Should be handled by automation after bootstrapping
+
+- Operations, maintenance
+ - Onboarding/offboarding customers
+ - Should be handled by alerting/automation:
+  - Scaling
+  - Patching
+ - Adapting to
+  - changes
+   - Technology
+   - Environment
    - Requirements
-   - Design
-   - Implementation
-   - Measurement
+   - Other new information
+  - Understanding the change
+  - Implementing the fix(es)
 
-  - Operations, maintenance
-   - Onboarding/offboarding customers
-   - Scaling
-   - Patching
-   - Adapting to
-    - Requirements changes
-    - New information
-
-  - Decomissioning
-   - Offboarding remaining customers
-   - Reverse commissioning process
-   - Secure destruction of data
-   - Hardware recycling
+- Decomissioning
+ - Always have an exit plan
+ - Offboarding remaining customers
+ - Reverse commissioning process
+ - Secure destruction of data
+ - Hardware recycling
 
