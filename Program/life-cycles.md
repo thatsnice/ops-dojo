@@ -2,7 +2,7 @@
 
 Everything has a life-cycle. Everything that ever was has a time before which
 it wasn't. Nothing lasts forever. Between these is a period of existence which
-has its own inner cycles. 
+has its own inner cycles.
 
 In the interest of breaking things down into and decoupling their constituant
 parts we break down the life cycle of all things this way. This allows us to
@@ -56,8 +56,8 @@ its conclusion.
 
 ### Planning
 
-For each termination reason you identify, there will be better and worse way
-of concluding the life-cycle. For example, when planning to eat lunch, 
+For each termination reason you identify, there will be better and worse ways
+of concluding the life-cycle. For example, when planning to eat lunch...
 
 # Example: Lunch
 
@@ -68,18 +68,19 @@ even a little bit hungry.
 
 ### Definition
 
-This Lunch entity will be successful if, 
-- by 15:55 
-- I have consumed a sufficiently nourishing and filling meal 
+This Lunch entity will be successful if:
+
+- by 15:55
+- I have consumed a sufficiently nourishing and filling meal
 - I have spent less than $20
-- I am back at my place of work
-- None of the constraints of my other cycles are violated (safety and such)
+- I reach my next appointment on time
+- None of the constraints of my larger cycles are violated (safety and such)
 
 ### Preparation
 
-- Deciding what/where to eat
+- Deciding what and where to eat
 - Communicating plans to those who might care
-- Posting notice of absence if necessary
+- Posting out-of-office or equivalent notice
 - Getting to the lunch site
 
 ### Initiation

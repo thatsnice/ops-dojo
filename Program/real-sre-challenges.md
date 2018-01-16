@@ -27,7 +27,7 @@ support for.
       Try to put more complex questions in the form of "I guessed the
       following, but was unable to derive these other things:"
       followed by a series of questions which are as simple as you can
-      make them. 
+      make them.
     - For example, if the project is a conference and attendees will
       need something from your team, guess based on your team's scope
       as to what sorts of things they will need. Make a list of that,
