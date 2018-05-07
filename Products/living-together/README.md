@@ -30,7 +30,7 @@ About having a roommate
     - Shorts
 
 - Roommate tracking system
-  - We'll slack or google hangouts to broadcast status updates
+  - We'll use slack or google hangouts to broadcast status updates
     - Participation is optional
 
 - Group activities
