@@ -105,6 +105,7 @@
  - Customers
  - Vendors
  - Engineers
+
 - Software/services
 - Devices
 - Network transports
@@ -120,6 +121,7 @@
   - SLAs
   - Change control
   - ...
+
  - Implementation
   - Project Management/Logistics
   - Automation
