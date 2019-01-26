@@ -47,9 +47,7 @@ How the objects in the Lexicon interact.
 
 ### TIC Tool Suite
 
-https://github.com/rdeforest/TIC
-
-As of 2012-02-02, this is jut a stub.
+https://github.com/thatsnice/TalkIsCheap
 
 ### Example Projects
 
