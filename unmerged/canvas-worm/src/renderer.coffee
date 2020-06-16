@@ -12,10 +12,10 @@ class Simulator
   constructor: (@root = window) ->
     { @document } = @root
     { @body } = @document
-    @document
-      .getElementsByTagName 'title'
-      [0]
-      .innerText = title
+    # @document
+    #   .getElementsByTagName 'title'
+    #   [0]
+    #   .innerText = title
 
     @createElement = (args...) => @document.createElement args...
 
