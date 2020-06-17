@@ -1,31 +1,35 @@
-HalfPI    = Math.PI / 2
 Tau       = Math.PI * 2
 TauDiv360 = Tau / 360
 
-polarToCart = (r, theta) ->
-  [ r * Math.cos theta
-    r * Math.sin theta ]
+polarToCartesian = (radius, angle) ->
+  [ radius * Math.cos angle
+    radius * Math.sin angle ]
 
-toRadians = (degrees) -> TauDiv360 * degrees
+degreesToRadians = (degrees) -> TauDiv360 * degrees
 
 class Simulator
-  constructor: (@root = window) ->
-    { @document } = @root
-    { @body } = @document
-    # @document
-    #   .getElementsByTagName 'title'
-    #   [0]
-    #   .innerText = title
+  constructor: (@root = window, @config = {}) ->
+    @document = @root.document
+    @body     = @document.body
+    @tick     = 0
 
-    @createElement = (args...) => @document.createElement args...
+    @setTitle @config.title or 'A Simulation'
+    @initCanvas()
+    @resize()
+    @root.onresize = => @resize()
 
+  createElement: (args...) ->
+    @document.createElement args...
+
+  initCanvas: ->
     @canvas = @createElement 'canvas'
     @canvas.onclick = => @toggleRunning()
     @ctx = @canvas.getContext '2d'
     @body.appendChild @canvas
 
-    @resize()
-    @root.onresize = => @resize()
+  setTitle: (title) ->
+    titleElement = @document.getElementsByTagName('title')[0]
+    titleElement.innerText = title
 
   start: ->
     @running = true
@@ -50,15 +54,14 @@ class Simulator
       @root.cancelAnimationFrame id
 
   animate: ->
-    return unless @running
+    if @running and not @animationRequest
+      @animationRequest = @root.requestAnimationFrame =>
+        @tick++
+        @animationRequest = null
+        @iterate()
+        @drawFrame()
 
-    @animationRequest ?= @root.requestAnimationFrame =>
-      @tick++
-      @animationRequest = null
-      @iterate()
-      @drawFrame()
-
-      @animate()
+        @animate()
 
   resize: ->
     { innerWidth: @width, innerHeight: @height } = @root
@@ -68,12 +71,12 @@ class Simulator
     Object.assign @canvas, { @width, @height }
 
   clearFrame: (color) ->
-    @ctx.fillStyle   =
+    @ctx.fillStyle   = color
     @ctx.strokeStyle = color
     @ctx.fillRect 0, 0, @width, @height
 
   drawCircle: (x, y, radius, color) ->
-    @ctx.fillStyle   =
+    @ctx.fillStyle   = color
     @ctx.strokeStyle = color
     @ctx.beginPath()
     @ctx.arc x, y, radius, 0, Tau
@@ -84,10 +87,10 @@ class Worm extends Simulator
   constructor: (args...) ->
     super args...
 
-    @length = 64
-    @vel    = 5
-    @radius = 10
-    @turnSpeed = (Tau / 360) * 30
+    @length    = 64
+    @velocity  = 5
+    @radius    = 10
+    @turnSpeed = degreesToRadians 30
 
     {mx: x, my: y} = @
     @segments  = [1..@length].map -> {x, y}
@@ -100,7 +103,7 @@ class Worm extends Simulator
     @dir -= Tau if @dir >  Math.PI
     @dir += Tau if @dir < -Math.PI
 
-    [dx, dy] = polarToCart @vel, @dir
+    [dx, dy] = polarToCartesian @velocity, @dir
 
     {x, y} = @segments[0]
     x = (x + dx + @width)  % @width
@@ -125,4 +128,4 @@ class Worm extends Simulator
 
 Object.assign window, {Simulator, Worm}
 
-(window.worm = new Worm).start()
+(window.worm = new Worm window, title: 'A Worm').start()
