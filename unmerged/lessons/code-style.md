@@ -24,4 +24,13 @@ The standard argument against vertical alignment is that it adds noise to
 diffs. To thi I say just turn off whitespace sensitivity and you should be
 fine.
 
+# vertical whitspace
 
+I favor judicious use of vertical whitespace to separate/group related
+statements:
+
+```coffee
+class NiceBehavior extends MonoBehavior
+  ...
+
+```
