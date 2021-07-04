@@ -1,4 +1,4 @@
-2016-02-02
+# 2016-02-02
 
 - First big demo: deploy large-scale multi-app stack
   - Persistence, web apps, edge caching, DNS, ...
@@ -27,3 +27,10 @@
     recognized. If something works" and then I started paraphrasing as: at a
     scale, it's not safe to assume it can be replicated at another scale.
 
+
+# 2021-07-04
+
+- Some students would greatly benefit from written text and drawings to study
+  at their own pace or on their own time.
+  - lecture for direction
+  - text for detail
