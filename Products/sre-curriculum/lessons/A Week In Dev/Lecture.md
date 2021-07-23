@@ -101,3 +101,19 @@ comparing `main.js` to `main.coffee`. See [the CoffeeScript
 website](http://coffeescript.org) for more information.
 
 
+## Writing and Running Tests
+
+
+
+## Fixing Bugs
+
+Fixing bugs consists of
+
+- Writing one or more tests which fail because of the bug
+- Making the test(s) pass
+- Performing a code change review
+- Checking in the change
+
+### Writing tests
+
+
