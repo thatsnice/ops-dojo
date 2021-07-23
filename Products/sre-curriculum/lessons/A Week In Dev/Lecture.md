@@ -1,4 +1,4 @@
-# A Week In Dev: Part of The Code Lifecycle
+# A Week In Dev: Part of The Code Life Cycle
 
 There are as many ways to develop software as there are developers. This
 lesson covers some of the most recent best practices Robert has experienced.
@@ -76,7 +76,7 @@ project. In this case, `index.html` includes `main.js` via a `<script>` tag.
 `main.js` is generated from `main.coffee` via the `cake build` command which
 is defined in `Cakefile`. You can see this in action now:
 
-```
+```console
 $ cake build
 Nothing to clean
 Compiling CoffeeScript to ECMAScript...
@@ -89,7 +89,7 @@ _If you got an error about 'cake' not being a command or something, see Depenend
 
 You can see the new files in `public/js`:
 
-```
+```console
 $ find public/js
 public/js
 public/js/main.js
