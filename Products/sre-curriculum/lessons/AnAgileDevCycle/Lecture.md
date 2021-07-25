@@ -101,9 +101,30 @@ comparing `main.js` to `main.coffee`. See [the CoffeeScript
 website](http://coffeescript.org) for more information.
 
 
-## Writing and Running Tests
+## Making changes
 
+Code, data and documentation are always kept in a Version Control System...
 
+Any change to a repository (code or otherwise) consists of:
+
+- Obtaining or synchronizing your copy of the code with the repository you're working in.
+- Editing files
+- Committing changes
+- Pushing changes
+
+The `git clone` command above is a way to start a new workspace. If you
+already have a workspace you can obtain any changes pushed by others by
+executing a `git pull` from anywhere within the workspace.
+
+Regarding the editing, in general it's best to make small changes which are
+"obviously correct." This isn't always possible, it's just a target to aim
+for. It is also good to separate unrelated changes. For example, changes which
+are strictly re-formatting should not be combined with functional changes.
+It's OK to include white space changes which are necessitated by the syntax of
+the code you're editing. Most change review tools are smart enough to hide
+white space changes which do not change the meaning of the code.
+
+Committing a change 
 
 ## Fixing Bugs
 
@@ -136,3 +157,37 @@ to the project.
 
 For the "how" part of writing tests, (as opposed to "what" and "why"), the
 examples in the project _should_ be adequate. If not, that's on me.
+
+Be wary of [Heisenbugs](https://en.wikipedia.org/wiki/Heisenbug): just because
+a test fails once doesn't necessarily mean the test is sufficient, and just
+because a test passes when you think it should fail doesn't mean the test
+isn't useful. There is no trick to isolating such bugs.
+
+The bug is probably due to a [race
+condition](https://en.wikipedia.org/wiki/Race_condition). You may have to
+force timing elements into your test to reliably trigger a bug.  It also may
+not even be possible to trigger reliably. In that case it's acceptable to take
+a probabilistic approach to reproducing the bug by, for example, looping
+through the same test multiple times. This is less than ideal, but once you
+discover the true nature of the bug you may find you can re-write the test(s)
+to reproduce the bug reliably.
+
+You may find that re-arranging the order of your tests increases or decreases
+the frequency that certain tests pass or fail. It may be useful to seek the
+ordering which causes the most tests to fail, but try to make sure that any test
+which has ever failed with the current code continues to fail after
+re-arranging the tests. If it is not possible to make all such tests fail
+simply by re-ordering them, in which case you will probably want to add more
+tests to ensure that all known failure conditions can be reproduced.
+
+Don't change the code while you are changing tests! Commit (but don't push)
+your changes to the tests before beginning to make code changes.
+
+### Making tests pass
+
+The goal is to get each test to pass by making the simplest possible change to
+the code. It's a little like an application of [Occam's
+Razor](https://en.wikipedia.org/wiki/Occam%27s_razor): if two changes both
+make a test pass, prefer the simpler change. Secondarily, no other tests
+should stop passing. Any tests that failed before making your change may
+continue to fail, but if they also pass that's gravy.
