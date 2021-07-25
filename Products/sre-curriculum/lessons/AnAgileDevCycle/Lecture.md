@@ -116,4 +116,23 @@ Fixing bugs consists of
 
 ### Writing tests
 
+Tests serve (at least) two purposes in Agile development:
 
+- To define the scope of a change
+- To detect regressions
+
+Limiting the scope of changes helps to limit the programmer's natural tendency
+to tinker. When the test passes, the change is done.
+
+Bug regressions can easily occur as an unexpected side effect of seemingly
+unrelated changes. Maintaining a test suite reduces the likelihood that such
+regressions will go unnoticed and reach customers.
+
+A good test is short and boring. Some programmers find writing tests to be "no
+fun" because of this. Later they may grow to enjoy writing tests because
+whether they pass or fail, the tests always work. It can be satisfying to know
+that the five lines one added to the test suite are undeniably an improvement
+to the project.
+
+For the "how" part of writing tests, (as opposed to "what" and "why"), the
+examples in the project _should_ be adequate. If not, that's on me.
