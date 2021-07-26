@@ -12,10 +12,10 @@ iteration.
 Students will gain experience in:
 
   - obtaining and exploring existing code
+  - making changes
   - writing and running tests
   - fixing bugs
   - adding features
-  - reviewing changes
   - refactoring
 
 ## Meet The Project
@@ -103,18 +103,77 @@ website](http://coffeescript.org) for more information.
 
 ## Making changes
 
-Code, data and documentation are always kept in a Version Control System...
+### Example
 
-Any change to a repository (code or otherwise) consists of:
+```console
+$ git pull
+Already up to date.
+$ vi Cakefile
+$ git diff
+diff --git a/Cakefile b/Cakefile
+index 0a4cc80..d5f938b 100644
+--- a/Cakefile
++++ b/Cakefile
+@@ -6,9 +6,6 @@ defaults =
+   OUTPUT_DIR : "public/js"
+   INPUT_DIR  : "src"
 
-- Obtaining or synchronizing your copy of the code with the repository you're working in.
-- Editing files
-- Committing changes
-- Pushing changes
+-task 'test', 'Run all tests', (options) ->
+-  require './t/all'
+-
+ doCmd = (cmd) ->
+   new Promise (resolve, reject) ->
+     child_process
+@@ -31,6 +28,15 @@ dirExists = (path) ->
 
-The `git clone` command above is a way to start a new workspace. If you
-already have a workspace you can obtain any changes pushed by others by
-executing a `git pull` from anywhere within the workspace.
+ makeDir = (path) -> doCmd "mkdir -p #{path}"
+
++task 'test', 'Run all tests', (options) ->
++  { OUTPUT_DIR
++    INPUT_DIR
++  } = Object.assign {}, defaults, options
++
++  await invoke 'build'
++
++  require './t/all'
++
+ task 'init', 'Install dependencies, setup dirs', (options) ->
+   { OUTPUT_DIR
+     INPUT_DIR
+$ git add Cakefile
+$ git commit
+$ git push
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (8/8), 1000 bytes | 1000.00 KiB/s, done.
+Total 8 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To github.com:thatsnice/PurityTest
+   eceb3f2..3f90701  main -> main
+$ 
+```
+
+### Discussion
+
+Code, data and documentation are kept in a Version Control System (VCS). This
+provides the following benefits:
+
+- multiple change-level undo
+- logging of who changed what, when and why
+- merging the work of multiple contributors is easier
+
+The steps for creating a change to a repository (code or otherwise) are:
+
+- Obtain or synchronize your copy of the repository you're working in
+- Edit files
+- Commit changes
+- Push changes
+
+The `git clone` command in the Meet the Project section is one way to start a
+new workspace. If you already have a workspace you can obtain any changes
+pushed by others by executing a `git pull` from anywhere within the workspace.
 
 Regarding the editing, in general it's best to make small changes which are
 "obviously correct." This isn't always possible, it's just a target to aim
@@ -124,7 +183,17 @@ It's OK to include white space changes which are necessitated by the syntax of
 the code you're editing. Most change review tools are smart enough to hide
 white space changes which do not change the meaning of the code.
 
-Committing a change 
+Once you have finished your change you can review it with `git diff`. If you
+find it satisfactory you can commit it to your local cache with `git commit`.
+This will ask you for a commit message. The commit message may be one line,
+but when one line isn't enough, enter a summary, followed by a blank line and
+then multiple lines of description.
+
+Each change you commit adds to the history of the branch you're working on.
+When you execute a `git push`, you're sending all your changes on your current
+branch to the origin repository.
+
+Git is a huge topic unto itself and there is plenty of help available online.
 
 ## Fixing Bugs
 
@@ -191,3 +260,25 @@ Razor](https://en.wikipedia.org/wiki/Occam%27s_razor): if two changes both
 make a test pass, prefer the simpler change. Secondarily, no other tests
 should stop passing. Any tests that failed before making your change may
 continue to fail, but if they also pass that's gravy.
+
+### Code Review
+
+(...)
+
+### Checking in the change
+
+(...)
+
+## Adding features
+
+Adding features is the same as fixing bugs except that the
+bug is that the feature hasn't been implemented yet. That
+is, the tests you write to demonstrate the bug should
+demonstrate that the app doesn't have the feature.
+
+## Refactoring
+
+It sometimes happens that there is a need to 'refactor' the code. This refers
+to multiple different code manipulations and their reversals.
+
+(more to be added later, maybe)
