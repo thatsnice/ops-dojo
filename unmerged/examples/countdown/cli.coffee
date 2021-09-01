@@ -8,7 +8,9 @@ readline  = require 'readline'
 more = 0
 
 {findWords, dictionaryName} = require './anagrams'
-dictionaryName()
+{numberSolution}            = require './numbers'
+
+dictionaryName './words'
 
 JUMBLE =
   ///
@@ -31,13 +33,13 @@ main = ->
     switch
       when not line.length
         console.log ''
-      #when line.startsWith '?' or line is 'help'
       when m = line.match /^\s*(help|\?)/
         showHelp()
       when m = line.match /^\s*more\s+(\d+)/
         more = Number m[1]
       when (numbers = line.match /[0-9]+/g) and numbers.length is 7
         [goal, numbers...] = numbers
+        console.log numberSolution goal, numbers
       when jumble = line.match JUMBLE
         [ , letters, lengths] = jumble
         lengths = lengths
@@ -54,6 +56,7 @@ main = ->
 
     rl.prompt()
 
+
 showHelp = ->
   console.log '''
     Lines of just letters are letter queries.
@@ -64,9 +67,11 @@ showHelp = ->
     '?' and 'help' show this message.
   '''
 
-byLengths = (buckets, word) ->
+
+byLength = (buckets, word) ->
   (buckets[word.length] ?= []).push word
   buckets
+
 
 jumbleSolutions = (letters, lengths) ->
   words =
