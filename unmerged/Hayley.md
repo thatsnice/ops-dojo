@@ -19,17 +19,18 @@ topics
   - Ethernet
   - WiFi
 
-Security
- - How to talk about security: Alice, Bob, Charlie, Eve, Malory, Trent
+# Security
 
- - Pillars
+- How to talk about security: Alice, Bob, Charlie, Eve, Malory, Trent
+
+- Pillars
   - Authenticity    : who am I really talking with?
   - Avilability     : how reliable is this service?
   - Confidentiality : who all can see what I'm doing?
   - Integrity       : will 1 always equal 1?
   - Non-repudiation : can I prove the server sent me a message?
 
- - Encryption
+- Encryption
   - Symetric crypto
   - Asymetric crypto
   - Public key crypto
@@ -37,7 +38,7 @@ Security
    - Pub/priv key pairs
    - signing vs encrypting
 
- - TLS
+- TLS
   - session key exchange
 
 
